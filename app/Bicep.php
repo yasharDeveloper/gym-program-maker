@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bicep extends Model
 {
-    // public function program() {
+    public function program() {
 
-    //     return $this->belongsTo('App\Program');
-    // }
+        return $this->belongsTo('App\Program');
+    }
 }

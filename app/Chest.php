@@ -8,6 +8,6 @@ class Chest extends Model
 {
     public function program() {
 
-        return $this->belongsTo('App\Program','id');
+        return $this->belongsTo('App\Program');
     }
 }

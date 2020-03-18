@@ -1,31 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+@extends('layouts/gym-layout')
 
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
-    <link rel="stylesheet" href="css/body-info.css">
-</head>
-<body>
-    <div class="container">
 
-        <div class="row justify-content-center title">
-            <h3>اطلاعات بدن من</h3>
-        </div>
+@section('title', 'body information')
+@section('styles', 'css/body-info.css')
+@section('js-codes', 'js/body-info.js')
 
-        <div class="row justify-content-center">
+@section('sidebar')
+    @parent
 
-            <div class="info-wrapper">
-                <h4>وزن:</h4>
-                <h4>قد:</h4>
-            </div>
+@endsection
 
-        </div>
 
+@section('content')
+    <div class="info-wrapper">
+        
     </div>
-</body>
-</html>
+
+@endsection

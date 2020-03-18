@@ -23,6 +23,14 @@
             <h3>write program</h3>
         </div>
 
+        @if($errors->any())
+
+            @foreach($errors->all() as $error)
+                <h3>{{$error}}</h3>
+            @endforeach
+
+        @endif
+
         <div id="accordion">
 
             {{-- برنامه سینه --}}
@@ -33,27 +41,37 @@
                     </a>
                   </div>
                   <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                    <div class="card-body chest">
 
-                        <div class="row fields">
+                    <form action="{{route('chestInfo')}}" method="get">
 
-                                <div class="col form-group">
-                                    <label for="usr">حرکت:</label>
-                                    <input type="text" name="chestName1" class="form-control" id="usr">
-                                </div>
+                        @csrf
 
-                                <div class="col form-group">
-                                    <label for="usr">ست:</label>
-                                    <input type="text" name="chestSet1" class="form-control" id="usr">
-                                </div>
+                        <div class="card-body chest">
 
-                                <div class="col form-group">
-                                    <label for="usr">بیشترین وزن:</label>
-                                    <input type="text" name="chestMax1" class="form-control" id="usr">
-                                </div>
+                            <div class="row fields">
+
+                                    <div class="col form-group">
+                                        <label for="usr">حرکت:</label>
+                                        <input type="text" name="chestName[]" class="form-control" id="usr">
+                                    </div>
+
+                                    <div class="col form-group">
+                                        <label for="usr">ست:</label>
+                                        <input type="text" name="chestSet[]" class="form-control" id="usr">
+                                    </div>
+
+                                    <div class="col form-group">
+                                        <label for="usr">بیشترین وزن:</label>
+                                        <input type="text" name="chestMax[]" class="form-control" id="usr">
+                                    </div>
+
+                            </div>
 
                         </div>
-                    </div>
+
+                    <input type="submit" class="primary btn-primary" value="ثبت">
+
+                    </form>
 
                     <a class="addItem" title="chest" href="#">افزودن حرکت</a>
 
@@ -68,31 +86,38 @@
                     </a>
                   </div>
                   <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                    <div class="card-body biceps">
 
-                        <div class="row fields">
+                    <form action="{{route('bicepsInfo')}}" method="get">
 
-                            <div class="col form-group">
-                                <label for="usr">حرکت:</label>
-                                <input type="text" name="bicepsName1" class="form-control" id="usr">
+                        <div class="card-body biceps">
+
+                            <div class="row fields">
+
+                                <div class="col form-group">
+                                    <label for="usr">حرکت:</label>
+                                    <input type="text" name="bicepsName[]" class="form-control" id="usr">
+                                </div>
+
+                                <div class="col form-group">
+                                    <label for="usr">ست:</label>
+                                    <input type="text" name="bicepsSet[]" class="form-control" id="usr">
+                                </div>
+
+                                <div class="col form-group">
+                                    <label for="usr">بیشترین وزن:</label>
+                                    <input type="text" name="bicepsMax[]" class="form-control" id="usr">
+                                </div>
+
                             </div>
 
-                            <div class="col form-group">
-                                <label for="usr">ست:</label>
-                                <input type="text" name="bicepsSet1" class="form-control" id="usr">
-                            </div>
-
-                            <div class="col form-group">
-                                <label for="usr">بیشترین وزن:</label>
-                                <input type="text" name="bicepsMax1" class="form-control" id="usr">
-                            </div>
 
                         </div>
+                        <input type="submit" class="primary btn-primary" value="ثبت">
 
+                        </form>
 
+                        <a class="addItem" title="biceps" href="#">افزودن حرکت</a>
                     </div>
-                    <a class="addItem" title="biceps" href="#">افزودن حرکت</a>
-                  </div>
                 </div>
 
 
@@ -104,29 +129,36 @@
                     </a>
                   </div>
                   <div id="collapseThree" class="collapse" data-parent="#accordion">
-                    <div class="card-body triceps">
 
-                        <div class="row fields">
+                    <form action="{{route('tricepsInfo')}}">
 
-                            <div class="col form-group">
-                                <label for="usr">حرکت:</label>
-                                <input type="text" name="tricepsName1" class="form-control" id="usr">
+                        <div class="card-body triceps">
+
+                            <div class="row fields">
+
+                                <div class="col form-group">
+                                    <label for="usr">حرکت:</label>
+                                    <input type="text" name="tricepsName[]" class="form-control" id="usr">
+                                </div>
+
+                                <div class="col form-group">
+                                    <label for="usr">ست:</label>
+                                    <input type="text" name="tricepsSet[]" class="form-control" id="usr">
+                                </div>
+
+                                <div class="col form-group">
+                                    <label for="usr">بیشترین وزن:</label>
+                                    <input type="text" name="tricepsMax[]" class="form-control" id="usr">
+                                </div>
+
                             </div>
 
-                            <div class="col form-group">
-                                <label for="usr">ست:</label>
-                                <input type="text" name="tricepsSet1" class="form-control" id="usr">
-                            </div>
-
-                            <div class="col form-group">
-                                <label for="usr">بیشترین وزن:</label>
-                                <input type="text" name="tricepsMax1" class="form-control" id="usr">
-                            </div>
 
                         </div>
 
+                        <input type="submit" class="primary btn-primary" value="ثبت">
+                    </form>
 
-                    </div>
                     <a class="addItem" title="triceps" href="#">افزودن حرکت</a>
                   </div>
                 </div>
@@ -140,28 +172,35 @@
                           </a>
                         </div>
                         <div id="collapseFour" class="collapse" data-parent="#accordion">
-                          <div class="card-body armpit">
 
-                            <div class="row fields">
+                          <form action="{{route('armpitInfo')}}">
 
-                                <div class="col form-group">
-                                    <label for="usr">حرکت:</label>
-                                    <input type="text" name="armpitName1" class="form-control" id="usr">
-                                </div>
+                            <div class="card-body armpit">
 
-                                <div class="col form-group">
-                                    <label for="usr">ست:</label>
-                                    <input type="text" name="armpitSet1" class="form-control" id="usr">
-                                </div>
+                                <div class="row fields">
 
-                                <div class="col form-group">
-                                    <label for="usr">بیشترین وزن:</label>
-                                    <input type="text" name="armpitMax1" class="form-control" id="usr">
+                                    <div class="col form-group">
+                                        <label for="usr">حرکت:</label>
+                                        <input type="text" name="armpitName[]" class="form-control" id="usr">
+                                    </div>
+
+                                    <div class="col form-group">
+                                        <label for="usr">ست:</label>
+                                        <input type="text" name="armpitSet[]" class="form-control" id="usr">
+                                    </div>
+
+                                    <div class="col form-group">
+                                        <label for="usr">بیشترین وزن:</label>
+                                        <input type="text" name="armpitMax[]" class="form-control" id="usr">
+                                    </div>
+
                                 </div>
 
                             </div>
 
-                          </div>
+                            <input type="submit" class="primary btn-primary" value="ثبت">
+                          </form>
+
                           <a class="addItem" title="armpit" href="#">افزودن حرکت</a>
                         </div>
                       </div>
@@ -175,28 +214,35 @@
                               </a>
                             </div>
                             <div id="collapseFive" class="collapse" data-parent="#accordion">
-                              <div class="card-body shoulder">
 
-                                <div class="row fields">
+                               <form action="{{route('shoulderInfo')}}">
 
-                                    <div class="col form-group">
-                                        <label for="usr">حرکت:</label>
-                                        <input type="text" name="shoulderName1" class="form-control" id="usr">
-                                    </div>
+                                <div class="card-body shoulder">
 
-                                    <div class="col form-group">
-                                        <label for="usr">ست:</label>
-                                        <input type="text" name="shoulderSet1" class="form-control" id="usr">
-                                    </div>
+                                    <div class="row fields">
 
-                                    <div class="col form-group">
-                                        <label for="usr">بیشترین وزن:</label>
-                                        <input type="text" name="shoulderMax1" class="form-control" id="usr">
+                                        <div class="col form-group">
+                                            <label for="usr">حرکت:</label>
+                                            <input type="text" name="shoulderName[]" class="form-control" id="usr">
+                                        </div>
+
+                                        <div class="col form-group">
+                                            <label for="usr">ست:</label>
+                                            <input type="text" name="shoulderSet[]" class="form-control" id="usr">
+                                        </div>
+
+                                        <div class="col form-group">
+                                            <label for="usr">بیشترین وزن:</label>
+                                            <input type="text" name="shoulderMax[]" class="form-control" id="usr">
+                                        </div>
+
                                     </div>
 
                                 </div>
 
-                              </div>
+                                <input type="submit" class="primary btn-primary" value="ثبت">
+                              </form>
+
                               <a class="addItem" title="shoulder" href="#">افزودن حرکت</a>
                             </div>
                           </div>
@@ -209,28 +255,35 @@
                                   </a>
                                 </div>
                                 <div id="collapseSix" class="collapse" data-parent="#accordion">
+
+                                  <form action="{{route('backInfo')}}">
+
                                   <div class="card-body back">
 
                                     <div class="row fields">
 
                                         <div class="col form-group">
                                             <label for="usr">حرکت:</label>
-                                            <input type="text" name="backName1" class="form-control" id="usr">
+                                            <input type="text" name="backName[]" class="form-control" id="usr">
                                         </div>
 
                                         <div class="col form-group">
                                             <label for="usr">ست:</label>
-                                            <input type="text" name="backSet1" class="form-control" id="usr">
+                                            <input type="text" name="backSet[]" class="form-control" id="usr">
                                         </div>
 
                                         <div class="col form-group">
                                             <label for="usr">بیشترین وزن:</label>
-                                            <input type="text" name="backMax1" class="form-control" id="usr">
+                                            <input type="text" name="backMax[]" class="form-control" id="usr">
                                         </div>
 
                                     </div>
 
                                   </div>
+
+                                    <input type="submit" class="primary btn-primary" value="ثبت">
+                                  </form>
+
                                   <a class="addItem" title="back" href="#">افزودن حرکت</a>
                                 </div>
                               </div>
@@ -243,28 +296,35 @@
                                       </a>
                                     </div>
                                     <div id="collapseSeven" class="collapse" data-parent="#accordion">
+
+                                      <form action="{{route('legInfo')}}">
+
                                       <div class="card-body leg">
 
                                         <div class="row fields">
 
                                             <div class="col form-group">
                                                 <label for="usr">حرکت:</label>
-                                                <input type="text" name="legName1" class="form-control" id="usr">
+                                                <input type="text" name="legName[]" class="form-control" id="usr">
                                             </div>
 
                                             <div class="col form-group">
                                                 <label for="usr">ست:</label>
-                                                <input type="text" name="legSet1" class="form-control" id="usr">
+                                                <input type="text" name="legSet[]" class="form-control" id="usr">
                                             </div>
 
                                             <div class="col form-group">
                                                 <label for="usr">بیشترین وزن:</label>
-                                                <input type="text" name="legMax1" class="form-control" id="usr">
+                                                <input type="text" name="legMax[]" class="form-control" id="usr">
                                             </div>
 
                                         </div>
 
                                       </div>
+
+                                        <input type="submit" class="primary btn-primary" value="ثبت">
+                                      </form>
+
                                       <a class="addItem" title="leg" href="#">افزودن حرکت</a>
                                     </div>
                                   </div>

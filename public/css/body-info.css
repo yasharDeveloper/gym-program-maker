@@ -1,15 +1,15 @@
-.title {
-    margin-bottom: 30px;
+body {
+    background-image: url('../image/body-info.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
-
-
 .info-wrapper {
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 800px;
-    height: 300px;
-    padding: 20px;
+
+    width: 600px;
+    height: 500px;
+    background-color: red;
 }
 
 

@@ -28,6 +28,7 @@ class CreateProgramsTable extends Migration
             $table->integer('max_weight');
             $table->unsignedBigInteger('program_id');
 
+            $table->timestamps();
             // $table->primary('id');
             // $table->index('program_id');
             // $table->foreign('program_id')->refrence('id')->on('programs');
@@ -41,6 +42,7 @@ class CreateProgramsTable extends Migration
             $table->integer('max_weight');
             $table->unsignedBigInteger('program_id');
 
+            $table->timestamps();
             // $table->primary('id');
             // $table->index('program_id');
             // $table->foreign('program_id')->refrence('id')->on('programs');
@@ -54,6 +56,7 @@ class CreateProgramsTable extends Migration
             $table->integer('max_weight');
             $table->unsignedBigInteger('program_id');
 
+            $table->timestamps();
             // $table->primary('id');
             // $table->index('program_id');
             // $table->foreign('program_id')->refrence('id')->on('programs');
@@ -67,19 +70,21 @@ class CreateProgramsTable extends Migration
             $table->integer('max_weight');
             $table->unsignedBigInteger('program_id');
 
+            $table->timestamps();
             // $table->primary('id');
             // $table->index('program_id');
             // $table->foreign('program_id')->refrence('id')->on('programs');
         });
 
         //create shoulder table
-        Schema::create('shoulder', function (Blueprint $table) {
+        Schema::create('shoulders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('exercise');
             $table->integer('set');
             $table->integer('max_weight');
             $table->unsignedBigInteger('program_id');
 
+            $table->timestamps();
             // $table->primary('id');
             // $table->index('program_id');
             // $table->foreign('program_id')->refrence('id')->on('programs');
@@ -93,6 +98,7 @@ class CreateProgramsTable extends Migration
             $table->integer('max_weight');
             $table->unsignedBigInteger('program_id');
 
+            $table->timestamps();
             // $table->primary('id');
             // $table->index('program_id');
             // $table->foreign('program_id')->refrence('id')->on('programs');
@@ -106,6 +112,7 @@ class CreateProgramsTable extends Migration
             $table->integer('max_weight');
             $table->unsignedBigInteger('program_id');
 
+            $table->timestamps();
             // $table->primary('id');
             // $table->index('program_id');
             // $table->foreign('program_id')->refrence('id')->on('programs');

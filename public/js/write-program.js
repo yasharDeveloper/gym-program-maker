@@ -1,7 +1,13 @@
 $(document).ready(function() {
     var exer;
     var cloneObj;
-    let count = [
+    var inputCount = 3;
+    var fieldsFunc = [
+                        "Name",
+                        "Set",
+                        "Max"
+                    ];
+    var count = [
                     "chest",
                     "biceps",
                     "triceps",
@@ -11,7 +17,7 @@ $(document).ready(function() {
                     "leg"
                 ];
 
-    count["chest"] = count["biceps"] = count["triceps"] = count["armpit"] = count["shouler"] = count["back"] = count["leg"] = 1;
+    count["chest"] = count["biceps"] = count["triceps"] = count["armpit"] = count["shoulder"] = count["back"] = count["leg"] = 1;
 
 
     function cloning() {
@@ -21,13 +27,15 @@ $(document).ready(function() {
             cloneObj = $(".fields:first").clone();
             count[exer]++;
 
-            var name = cloneObj.children("input:eq(0)").css("background-color","red");
-            // console.log(name);
+            // for(var i = 0;i < 3;i++) {
 
-            cloneObj.appendTo("." + exer);
+            //     cloneObj.children(".form-group:eq(" + i + ")").children("input").attr("name",exer + fieldsFunc[i] + count[exer]);
+            // }
+
+            // cloneObj.appendTo("." + exer);
         }
         else {
-            alert("soory!!");
+            alert("sorry!!");
         }
     }
 
