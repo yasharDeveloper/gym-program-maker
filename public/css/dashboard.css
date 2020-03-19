@@ -1,0 +1,21 @@
+body {
+    background-image: url('../image/dashboard.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    height: 100%;
+}
+
+.menu {
+    background: red;
+    width: 80%;
+    height: 600px;
+}
+
+.menu-item {
+    background: blue;
+    border: 1px solid black;
+    margin: 10px;
+}
