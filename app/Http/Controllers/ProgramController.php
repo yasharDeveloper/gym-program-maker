@@ -12,7 +12,7 @@ use App\Tricep;
 use App\Leg;
 use App\Shoulder;
 use App\Back;
-use Illuminate\Support\Facades\Redirect;
+
 
 class ProgramController extends Controller
 {
