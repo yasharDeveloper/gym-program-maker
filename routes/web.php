@@ -23,8 +23,8 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function() {
 
     Route::view("main","main");
-    Route::view("body-info", "body-info");
-    Route::view("write-program", "write-program");
+    Route::view("body-info", "body-info")->name('body-info');
+    Route::view("write-program", "write-program")->name('write-program');
     Route::view("dashboard", "dashboard");
 });
 

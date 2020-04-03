@@ -22,10 +22,14 @@ $(document).ready(function() {
 
     function cloning() {
 
-        if(count[exer] < 5) {
 
-            cloneObj = $(".fields:first").clone();
-            count[exer]++;
+        // exer = $(this).attr("exer");
+
+        // if(count[exer] < 5) {
+
+            // cloneObj = $(".fields:first");
+
+            // count[exer]++;
 
             // for(var i = 0;i < 3;i++) {
 
@@ -33,18 +37,34 @@ $(document).ready(function() {
             // }
 
             // cloneObj.appendTo("." + exer);
-        }
-        else {
-            alert("sorry!!");
-        }
+        // }
+        // else {
+        //     alert("sorry!!");
+        // }
     }
 
 
-    $(".addItem").click(function() {
-        exer = $(this).attr("title");
+    $("[exer]").click(function() {
 
-        cloning();
+        cloneObj = $(this).parent().siblings("form:first").children("div:first").clone();
+        $(this).parent().siblings("form:first").append(cloneObj);
+        // cloning();
 
+
+    });
+
+    $("[toggle]").click(function() {
+
+        var text = $(this).text();
+        
+        if(text == "نمایش") {
+            $(this).attr("html", "پنهان");
+        }
+        else {
+            $(this).attr("html", "نمایش");
+        }
+
+        $(this).parent().siblings("form:first").toggle("slow");
     });
 
 });

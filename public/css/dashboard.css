@@ -2,6 +2,7 @@ body {
     background-image: url('../image/dashboard.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background: #000;
 }
 
 .container {
@@ -9,13 +10,16 @@ body {
 }
 
 .menu {
-    background: red;
+    background: rgb(86, 85, 84, 0.5);
     width: 80%;
     height: 600px;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .menu-item {
-    background: blue;
-    border: 1px solid black;
+    background: rgb(222, 60,75, 0.5);
     margin: 10px;
+    height: 40%;
+    border-radius: 10px;
 }

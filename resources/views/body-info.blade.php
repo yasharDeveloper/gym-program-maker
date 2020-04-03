@@ -2,17 +2,21 @@
 
 
 @section('title', 'body information')
-@section('styles', 'css/body-info.css')
-@section('js-codes', 'js/body-info.js')
+@section('content-style', 'css/body-info.css')
+@section('js-script', 'js/body-info.js')
+
+@section('header')
+    @parent
+@endsection
 
 @section('sidebar')
     @parent
-
 @endsection
 
 
 @section('content')
-    <div class="container">
+    @parent
+    {{-- <div class="container"> --}}
         <div class="row justify-content-center">
 
             <div class="col-6 info-wrapper">
@@ -35,6 +39,8 @@
 
             </div>
         </div>
+        </div>
     </div>
+    {{-- </div> --}}
 
 @endsection
